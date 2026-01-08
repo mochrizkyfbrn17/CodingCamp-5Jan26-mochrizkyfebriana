@@ -6,14 +6,85 @@
     <title>Todo List</title>
     <!-- CSS External -->
     <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body>
     <!-- Header -->
-    <header></header>
+    <header>
+      <h1 class="text font-bold text-2xl">Todo List - Rizky</h1>
+    </header>
+
     <!-- Main -->
-    <main></main>
+    <main>
+      <section>
+        <!-- Form section -->
+        <form>
+          <!-- Todo input -->
+          <input
+            class="border rounded p-2"
+            type="text"
+            id="todo-input"
+            placeholder="Add your todo..."
+          />
+
+          <!-- Date input -->
+          <input
+            class="border rounded p-2"
+            type="date"
+            id="todo-date"
+            placeholder="Select date..."
+          />
+        </form>
+
+        <!-- Submit button -->
+        <button
+          class="border rounded p-2 bg-blue-500 text-white"
+          type="button"
+          id="add-todo-button"
+        >
+          Add Todo
+        </button>
+      </section>
+      <!-- Action section -->
+      <section class="flex pt-2 justify-between">
+        <!-- Filter todos -->
+        <div>
+          <label for="filter-todos" class="mr-2">Filter Todos:</label>
+          <select id="filter-todos" class="border rounded p-2">
+            <option value="all">All</option>
+            <option value="completed">Completed</option>
+            <option value="uncompleted">Uncompleted</option>
+          </select>
+        </div>
+
+        <!-- Clear todos button -->
+        <button
+          class="border rounded p-2 bg-red-500 text-white"
+          type="button"
+          id="clear-todos-button"
+        >
+          Clear Todos
+        </button>
+      </section>
+
+      <!-- Todo list section -->
+      <section class="pt-2">
+        <header>
+          <h1 class="text font-semibold text-xl">Your Todo List</h1>
+        </header>
+        <ul class="pt-2" id="todo-list">
+          <!-- Todo items will be added here dynamically -->
+          <li>You have no todo</li>
+        </ul>
+      </section>
+    </main>
+
     <!-- Footer -->
-    <footer></footer>
+    <footer>
+      <p class="text-center pt-4">&copy; 2026 Web Todo List Rizky</p>
+    </footer>
     <!-- JS External -->
     <script src="js/script.js"></script>
   </body>
