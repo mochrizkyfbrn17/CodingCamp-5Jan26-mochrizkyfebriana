@@ -11,9 +11,13 @@ function addTodo() {
       task: todoInput.value,
       date: todoDate.value,
     };
-    todos.push(newTodos);
 
+    todos.push(newTodos);
     renderTodos();
+
+    // clear the input fields after adding the todo
+    todoInput.value = "";
+    todoDate.value = "";
   }
 }
 
@@ -32,10 +36,10 @@ function renderTodos() {
   });
 }
 
-// function to remove a todo item
-function removeTodo(index) {
-  todo.splice(index, 1);
-  renderTodoList();
+// function to remove all todo items
+function removeAllTodos() {
+  todos = [];
+  renderTodos();
 }
 
 // function to filter todo items

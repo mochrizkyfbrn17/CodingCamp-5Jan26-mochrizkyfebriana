@@ -12,13 +12,17 @@
   </head>
   <body>
     <!-- Header -->
-    <header>
-      <h1 class="text font-bold text-2xl">Todo List - Rizky</h1>
+    <header class="col-span-5">
+      <h1 id="header-title" class="text font-bold text-2xl">
+        Todo List - Rizky
+      </h1>
     </header>
 
     <!-- Main -->
-    <main>
-      <section>
+    <main class="grid grid-cols-5 grid-rows-5 gap-2 h-screen">
+      <section
+        class="col-span-2 row-span-3 row-start-2 h-full p-5px border-solid border-2 border-gray-300 bg-lime-100"
+      >
         <!-- Form section -->
         <form>
           <!-- Todo input -->
@@ -47,10 +51,7 @@
         >
           Add Todo
         </button>
-      </section>
 
-      <!-- Action section -->
-      <section class="flex pt-2 justify-between">
         <!-- Filter todos -->
         <div>
           <label for="filter-todos" class="mr-2">Filter Todos:</label>
@@ -63,6 +64,7 @@
 
         <!-- Clear todos button -->
         <button
+          onclick="removeAllTodos()"
           class="border rounded p-2 bg-red-500 text-white"
           type="button"
           id="clear-todos-button"
@@ -72,7 +74,9 @@
       </section>
 
       <!-- Todo list section -->
-      <section class="pt-2">
+      <section
+        class="col-span-3 row-span-3 col-start-3 row-start-2 h-full p-5px border-solid border-2 border-gray-300 bg-lime-100"
+      >
         <header>
           <h1 class="text font-semibold text-xl">Your Todo List</h1>
         </header>
@@ -84,9 +88,10 @@
     </main>
 
     <!-- Footer -->
-    <footer>
+    <footer class="col-span-5 col-start-1 row-start-5">
       <p class="text-center pt-4">&copy; 2026 Web Todo List Rizky</p>
     </footer>
+
     <!-- JS External -->
     <script src="js/script.js"></script>
   </body>

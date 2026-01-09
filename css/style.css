@@ -1,5 +1,37 @@
-body {
-  justify-items: center;
-  height: 100vh;
-  align-content: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+#header-title {
+  justify-items: center;
+  text-align: center;
+  background-color: #fff;
+  margin-bottom: -7rem;
+}
+/* main {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 8px;
+  height: 100vh;
+} */
+
+/* #container-left {
+  grid-column: span 2 / span 2;
+  grid-row: span 5 / span 5;
+  background-color: aqua;
+  height: 100%;
+  border: 1px solid #2b1f1f;
+  padding: 5px;
+} */
+
+/* #container-right {
+  grid-column: span 3 / span 3;
+  grid-row: span 5 / span 5;
+  grid-column-start: 3;
+  background-color: rebeccapurple;
+  height: 100%;
+  border: 5px solid black;
+} */
