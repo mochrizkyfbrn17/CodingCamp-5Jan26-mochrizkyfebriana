@@ -9,10 +9,16 @@
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Google Font Import -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
   </head>
+
   <body>
     <!-- Header -->
-    <header class="col-span-5">
+    <header class="col-span-5 justify-center text-center">
       <h1 id="header-title" class="text font-bold text-2xl">
         Todo List - Rizky
       </h1>
@@ -21,65 +27,83 @@
     <!-- Main -->
     <main class="grid grid-cols-5 grid-rows-5 gap-2 h-screen">
       <section
-        class="col-span-2 row-span-3 row-start-2 h-full p-5px border-solid border-2 border-gray-300 bg-lime-100"
+        id="container-left"
+        class="col-span-2 row-span-3 row-start-2 h-full border-solid border-1 border-gray-500 rounded bg-gray-200 justify-center content-center"
       >
         <!-- Form section -->
         <form>
           <!-- Todo input -->
           <input
-            class="border rounded p-2"
+            class="border rounded"
             type="text"
             id="todo-input"
-            placeholder="Add your todo..."
+            placeholder="Add your todo here..."
           />
 
           <!-- Date input -->
           <input
-            class="border rounded p-2"
+            class="border rounded"
             type="date"
             id="todo-date"
             placeholder="Select date..."
           />
         </form>
 
-        <!-- Submit button -->
-        <button
-          onclick="addTodo()"
-          class="border rounded p-2 bg-blue-500 text-white"
-          type="button"
-          id="add-todo-button"
-        >
-          Add Todo
-        </button>
+        <section class="flex flex-col gap-2 mt-2">
+          <!-- Submit button -->
+          <button
+            onclick="addTodo()"
+            class="border solid rounded text-white"
+            type="button"
+            id="add-todo-button"
+          >
+            Add Todo
+          </button>
 
-        <!-- Filter todos -->
-        <div>
-          <label for="filter-todos" class="mr-2">Filter Todos:</label>
-          <select id="filter-todos" class="border rounded p-2">
-            <option value="all">All</option>
-            <option value="completed">Completed</option>
-            <option value="uncompleted">Uncompleted</option>
-          </select>
-        </div>
+          <!-- Filter todos -->
+          <button
+            onclick="filterTodos('completed')"
+            class="border solid rounded text-white"
+            type="button"
+            id="filter-all-button"
+          >
+            Filter
+          </button>
 
-        <!-- Clear todos button -->
-        <button
-          onclick="removeAllTodos()"
-          class="border rounded p-2 bg-red-500 text-white"
-          type="button"
-          id="clear-todos-button"
-        >
-          Clear Todos
-        </button>
+          <!-- Clear todos button -->
+          <button
+            onclick="removeAllTodos()"
+            class="border solid rounded text-white"
+            type="button"
+            id="clear-todos-button"
+          >
+            Clear Todos
+          </button>
+        </section>
       </section>
 
       <!-- Todo list section -->
       <section
-        class="col-span-3 row-span-3 col-start-3 row-start-2 h-full p-5px border-solid border-2 border-gray-300 bg-lime-100"
+        id="container-right"
+        class="col-span-3 row-span-3 col-start-3 row-start-2 h-full p-5px border-solid border-1 border-gray-500 bg-gray-200"
       >
         <header>
           <h1 class="text font-semibold text-xl">Your Todo List</h1>
         </header>
+        <table class="m-auto border-1 border-gray-400 w-full">
+          <tbody>
+            <thead>
+              <td>Task</td>
+              <td>Date</td>
+              <td>Status</td>
+            </thead>
+            <tr>
+              <td id="task1"></td>
+              <td id="date1"></td>
+              <td id="status1"></td>
+            </tr>
+          </tbody>
+        </table>
         <ul class="pt-2" id="todo-list">
           <!-- Todo items will be added here dynamically -->
           <li>You have no todo</li>
@@ -89,7 +113,9 @@
 
     <!-- Footer -->
     <footer class="col-span-5 col-start-1 row-start-5">
-      <p class="text-center pt-4">&copy; 2026 Web Todo List Rizky</p>
+      <p id="footer-text" class="text-center font-semibold text-xs">
+        &copy; 2026 Web Todo List Rizky
+      </p>
     </footer>
 
     <!-- JS External -->

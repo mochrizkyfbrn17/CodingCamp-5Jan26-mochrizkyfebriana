@@ -4,34 +4,50 @@
   box-sizing: border-box;
 }
 
+body {
+  line-height: 1.6rem;
+  background-color: #60a5fa;
+  color: #111827;
+  font-family: "Sour Gummy", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+/* Header and Footer adjustments */
 #header-title {
-  justify-items: center;
-  text-align: center;
-  background-color: #fff;
   margin-bottom: -7rem;
 }
-/* main {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  gap: 8px;
-  height: 100vh;
-} */
 
-/* #container-left {
-  grid-column: span 2 / span 2;
-  grid-row: span 5 / span 5;
-  background-color: aqua;
-  height: 100%;
-  border: 1px solid #2b1f1f;
-  padding: 5px;
-} */
+#footer-text {
+  margin-top: -6.5rem;
+}
 
-/* #container-right {
-  grid-column: span 3 / span 3;
-  grid-row: span 5 / span 5;
-  grid-column-start: 3;
-  background-color: rebeccapurple;
-  height: 100%;
-  border: 5px solid black;
-} */
+/* container adjustments */
+#container-left {
+  margin-left: 4rem;
+  padding: 1.5rem;
+}
+
+#container-right {
+  margin-right: 4rem;
+}
+
+/* form adjustments */
+#container-left form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Button adjustments */
+#add-todo-button,
+#filter-all-button,
+#clear-todos-button {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  background-color: #3b82f6;
+  padding: 0.2rem;
+  flex-direction: row;
+}

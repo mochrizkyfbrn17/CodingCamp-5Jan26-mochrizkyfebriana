@@ -5,7 +5,7 @@ function addTodo() {
   const todoInput = document.getElementById("todo-input");
   const todoDate = document.getElementById("todo-date");
   if (todoInput.value === "" || todoDate.value === "") {
-    alert("Todo dan tanggalnya harus diisi ya!");
+    alert("Please enter both task and date.");
   } else {
     const newTodos = {
       task: todoInput.value,
@@ -40,15 +40,4 @@ function renderTodos() {
 function removeAllTodos() {
   todos = [];
   renderTodos();
-}
-
-// function to filter todo items
-function filterTodos() {
-  const filterInput = document
-    .getElementById("filter-input")
-    .value.toLowerCase();
-  const filteredTodos = todo.filter((item) =>
-    item.toLowerCase().includes(filterInput)
-  );
-  renderTodoList(filteredTodos);
 }
