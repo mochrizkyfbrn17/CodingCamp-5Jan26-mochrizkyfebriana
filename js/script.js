@@ -1,1 +1,50 @@
-console.log("Hello, World!");
+let todos = [];
+
+// function to add a new todo item
+function addTodo() {
+  const todoInput = document.getElementById("todo-input");
+  const todoDate = document.getElementById("todo-date");
+  if (todoInput.value === "" || todoDate.value === "") {
+    alert("Todo dan tanggalnya harus diisi ya!");
+  } else {
+    const newTodos = {
+      task: todoInput.value,
+      date: todoDate.value,
+    };
+    todos.push(newTodos);
+
+    renderTodos();
+  }
+}
+
+// function to render the todo list
+function renderTodos() {
+  const todoList = document.getElementById("todo-list");
+
+  // clear the todo list before rendering
+  todoList.innerHTML = "";
+
+  // render each todo item
+  todos.forEach((todo, _) => {
+    todoList.innerHTML += `
+      <li> <p class="text-2xl">${todo.task}<span class="text-sm text-gray-500" >${todo.date}</span></p><br>
+      </li>`;
+  });
+}
+
+// function to remove a todo item
+function removeTodo(index) {
+  todo.splice(index, 1);
+  renderTodoList();
+}
+
+// function to filter todo items
+function filterTodos() {
+  const filterInput = document
+    .getElementById("filter-input")
+    .value.toLowerCase();
+  const filteredTodos = todo.filter((item) =>
+    item.toLowerCase().includes(filterInput)
+  );
+  renderTodoList(filteredTodos);
+}
