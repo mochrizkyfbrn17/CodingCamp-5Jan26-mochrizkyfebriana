@@ -2,13 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Sour Gummy", sans-serif;
 }
 
 body {
   line-height: 1.6rem;
   background-color: #60a5fa;
   color: #111827;
-  font-family: "Sour Gummy", sans-serif;
   font-optical-sizing: auto;
   font-weight: 100;
   font-style: normal;
@@ -32,13 +32,7 @@ body {
 
 #container-right {
   margin-right: 4rem;
-}
-
-/* form adjustments */
-#container-left form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  padding: 1.5rem;
 }
 
 /* Button adjustments */
@@ -50,4 +44,9 @@ body {
   background-color: #3b82f6;
   padding: 0.2rem;
   flex-direction: row;
+}
+
+ul li.completed {
+  text-decoration: line-through;
+  color: gray;
 }

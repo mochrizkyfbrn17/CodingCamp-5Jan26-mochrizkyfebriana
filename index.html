@@ -19,7 +19,7 @@
   <body>
     <!-- Header -->
     <header class="col-span-5 justify-center text-center">
-      <h1 id="header-title" class="text font-bold text-2xl">
+      <h1 id="header-title" class="text font-bold text-2xl cursor-default">
         Todo List - Rizky
       </h1>
     </header>
@@ -28,10 +28,10 @@
     <main class="grid grid-cols-5 grid-rows-5 gap-2 h-screen">
       <section
         id="container-left"
-        class="col-span-2 row-span-3 row-start-2 h-full border-solid border-1 border-gray-500 rounded bg-gray-200 justify-center content-center"
+        class="flex-col col-span-2 row-span-3 row-start-2 h-full border-solid border-1 border-gray-500 rounded bg-gray-200 justify-center content-center"
       >
         <!-- Form section -->
-        <form>
+        <form class="flex gap-2 justify-between">
           <!-- Todo input -->
           <input
             class="border rounded"
@@ -53,7 +53,7 @@
           <!-- Submit button -->
           <button
             onclick="addTodo()"
-            class="border solid rounded text-white"
+            class="border solid rounded text-white cursor-pointer"
             type="button"
             id="add-todo-button"
           >
@@ -63,7 +63,7 @@
           <!-- Filter todos -->
           <button
             onclick="filterTodos('completed')"
-            class="border solid rounded text-white"
+            class="border solid rounded text-white cursor-pointer"
             type="button"
             id="filter-all-button"
           >
@@ -73,7 +73,7 @@
           <!-- Clear todos button -->
           <button
             onclick="removeAllTodos()"
-            class="border solid rounded text-white"
+            class="border solid rounded text-white cursor-pointer"
             type="button"
             id="clear-todos-button"
           >
@@ -85,35 +85,21 @@
       <!-- Todo list section -->
       <section
         id="container-right"
-        class="col-span-3 row-span-3 col-start-3 row-start-2 h-full p-5px border-solid border-1 border-gray-500 bg-gray-200"
+        class="overflow-auto col-span-3 row-span-3 col-start-3 row-start-2 h-full p-5px border-solid border-1 rounded border-gray-500 bg-gray-200"
       >
         <header>
-          <h1 class="text font-semibold text-xl">Your Todo List</h1>
+          <h1 class="font-semibold text-xl cursor-default">Your Todo List</h1>
         </header>
-        <table class="m-auto border-1 border-gray-400 w-full">
-          <tbody>
-            <thead>
-              <td>Task</td>
-              <td>Date</td>
-              <td>Status</td>
-            </thead>
-            <tr>
-              <td id="task1"></td>
-              <td id="date1"></td>
-              <td id="status1"></td>
-            </tr>
-          </tbody>
-        </table>
-        <ul class="pt-2" id="todo-list">
+        <ul class="text-xl pt-2 cursor-pointer" id="todo-list">
           <!-- Todo items will be added here dynamically -->
-          <li>You have no todo</li>
+          <li">You have no todo</li>
         </ul>
       </section>
     </main>
 
     <!-- Footer -->
     <footer class="col-span-5 col-start-1 row-start-5">
-      <p id="footer-text" class="text-center font-semibold text-xs">
+      <p id="footer-text" class="text-center font-semibold text-xs cursor-default">
         &copy; 2026 Web Todo List Rizky
       </p>
     </footer>
